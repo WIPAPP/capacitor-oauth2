@@ -87,7 +87,7 @@ export class OAuth2ClientPluginWeb extends WebPlugin implements OAuth2ClientPlug
                                                 };
                                                 tokenRequest.open("POST", this.webOptions.accessTokenEndpoint, true);
                                                 tokenRequest.setRequestHeader('accept', 'application/json');
-                                                tokenRequest.setRequestHeader('cache-control', 'no-cache');
+                                                // tokenRequest.setRequestHeader('cache-control', 'no-cache');
                                                 tokenRequest.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
                                                 tokenRequest.send(WebUtils.getTokenEndpointData(this.webOptions, authorizationCode));
                                             }
