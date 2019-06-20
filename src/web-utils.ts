@@ -53,6 +53,7 @@ export class WebUtils {
         data.append('redirect_uri', options.redirectUrl);
         data.append('code', code);
         data.append('code_verifier', options.pkceCodeVerifier);
+        data.append('audience', options.resourceUrl);
         // data.append('scope', options.scope);
         return data;
     }
