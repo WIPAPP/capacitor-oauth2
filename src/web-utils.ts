@@ -46,8 +46,8 @@ export class WebUtils {
         return encodeURI(url);
     }
 
-    static getTokenEndpointData(options: WebOptions, code: string): FormData {
-        let data = new FormData();
+    static getTokenEndpointData(options: WebOptions, code: string): string {
+        let data = new URLSearchParams();
         data.append('grant_type', 'authorization_code');
         data.append('client_id', options.appId);
         data.append('redirect_uri', options.redirectUrl);
@@ -55,7 +55,7 @@ export class WebUtils {
         data.append('code_verifier', options.pkceCodeVerifier);
         data.append('audience', options.resourceUrl);
         // data.append('scope', options.scope);
-        return data;
+        return (<any>data).toString();
     }
 
     /**
